@@ -1,0 +1,13 @@
+{
+  "winner": {
+    "id": "monster-1",
+    "name": "Monster 1",
+    "attack": 60,
+    "defense": 40,
+    "hp": 10,
+    "speed": 80,
+    "type": "Type",
+    "imageUrl": "image url"
+  },
+  "tie": false
+}
