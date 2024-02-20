@@ -13,7 +13,36 @@ export const BattleMonsterCard = styled(Card, { shouldForwardProp: (prop) => pro
     alignItems: centralized ? 'center' : 'auto',
     justifyContent: centralized ? 'center' : 'auto',
 }))
+
+export const MonsterImage = styled.img(() => ({
+    boxShadow: '0px 0px 10px 0px rgba(0, 0, 0, 0.25)',
+    borderRadius: '7px',
+    width: '100%',
+}))
   
+export const MonsterName = styled(Typography)(() => ({
+    fontFamily: 'Roboto',
+    fontStyle: 'normal',
+    fontWeight: '400',
+    fontSize: '22px',
+    color: colors.black,
+    padding: '5px 0',
+    borderBottom: '1px solid rgba(0, 0, 0, 0.1)'
+}))
+
+export const MonsterSkill = styled.div(() => ({
+    margin: '5px 0'
+}))
+
+
+export const MonsterSkillName = styled(Typography)(() => ({
+    fontFamily: 'Roboto',
+    fontStyle: 'normal',
+    fontWeight: '400',
+    fontSize: '12px',
+    color: colors.black,
+}))
+
 export const BattleMonsterTitle = styled(Typography)(() => ({
     fontFamily: 'Roboto',
     fontStyle: 'normal',

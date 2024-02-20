@@ -1,7 +1,9 @@
 import { useState } from "react"
+import { useSelector } from "react-redux"
 import { useAppDispatch } from "../../app/hooks"
 import { Monster } from "../../models/interfaces/monster.interface"
 import { setSelectedMonster } from "../../reducers/monsters/monsters.actions"
+import { selectLoader } from "../../reducers/monsters/monsters.selectors"
 import { Image, ListTitle, MonsterCard, MonsterName, MonstersSection } from "./MonstersList.styled"
 
 type MonstersListProps = {
@@ -10,13 +12,16 @@ type MonstersListProps = {
 
 const MonstersList: React.FC<MonstersListProps> = ({ monsters }) => {
     const dispatch = useAppDispatch();
+    const loader = useSelector(selectLoader)
 
     const [selectedMonsterId, setSelectedMonsterId] = useState<string | null>(null);
 
     const handleMonsterClick = (monster: Monster) => {
+      if (!loader) {
         const value = selectedMonsterId === monster.id ? null : monster.id
         setSelectedMonsterId(value)
         dispatch(setSelectedMonster(!value ? null : monster));
+      }
     }
 
     return (
